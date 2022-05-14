@@ -1,0 +1,63 @@
+body{
+	margin: 0;/*div旁邊的空白，是因為body本身有margin*/
+}
+#sidebody{
+	width: 600px;
+	margin: 0 auto;
+	background-color: #ffecc9;
+}
+
+#header{
+	background-color: #ffd4d4;
+	text-align: center;	
+	font-size: 12pt;
+	height: 80px;
+}
+
+#h_option{
+	background-color: #ffffff;
+	width: 500px;
+	height: 70px;
+	border: 1px solid red;
+	margin: 0 auto;
+	vertical-align: middle;
+}
+
+#h_option ul li{
+	display: inline-block;
+	margin: 0 auto;
+}
+
+ul{
+	border: 1px solid #00f0f0;
+}
+
+/*
+#sidebar_left{
+	background-color: #ffecc9;
+	width: 120px;
+	float: left;
+}
+
+#sidebar_right{
+	background-color: #ffecc9;
+	width: 120px;
+	text-align: center;
+	line-height: 400px;
+	float: right;
+}
+*/
+#content{
+	background-color: #f2fff2;
+	text-align: center;
+	line-height: 700px;
+	height: 700px;
+}
+
+#footer{
+	clear: both;
+	background-color: #ffd4d4;
+	text-align: center;
+	line-height: 80px;
+}
+
