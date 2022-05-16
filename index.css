@@ -17,19 +17,26 @@ body{
 #h_option{
 	background-color: #ffffff;
 	width: 500px;
-	height: 70px;
-	border: 1px solid red;
+	height: 25px;
 	margin: 0 auto;
 	vertical-align: middle;
+	position: relative;
+	top: 55px;
 }
 
 #h_option ul li{
-	display: inline-block;
-	margin: 0 auto;
+	display: inline;
 }
 
 ul{
-	border: 1px solid #00f0f0;
+	width: 200px;
+	margin: 0 auto;
+}
+
+li{
+	width: 100px;
+	padding-right: 2.5px;
+	padding-left: 2.5px;
 }
 
 /*
@@ -47,6 +54,7 @@ ul{
 	float: right;
 }
 */
+
 #content{
 	background-color: #f2fff2;
 	text-align: center;
