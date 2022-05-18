@@ -1,0 +1,120 @@
+/*與index.css相同部分*/
+
+body{
+	margin: 0;/*div旁邊的空白，是因為body本身有margin*/
+}
+#sidebody{
+	width: 600px;
+	margin: 0 auto;
+	background-color: #ffecc9;
+}
+
+#header{
+	background-color: #ffd4d4;
+	text-align: center;	
+	font-size: 12pt;
+	height: 80px;
+    /*不一樣*/
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
+}
+
+#h_option{
+	background-color: #ffffff;
+	width: 500px;
+	height: 25px;
+	margin: 0 auto;
+	vertical-align: middle;
+	position: relative;
+	top: 55px;
+}
+
+#h_option ul li{
+	display: inline;
+}
+
+ul{
+	width: 200px;
+	margin: 0 auto;
+}
+
+li{
+	width: 100px;
+	padding-right: 2.5px;
+	padding-left: 2.5px;
+}
+
+/*
+#sidebar_left{
+	background-color: #ffecc9;
+	width: 120px;
+	float: left;
+}
+
+#sidebar_right{
+	background-color: #ffecc9;
+	width: 120px;
+	text-align: center;
+	line-height: 400px;
+	float: right;
+}
+*/
+
+#content{
+	background-color: #f2fff2;
+	text-align: center;
+	line-height: 700px;
+	height: 700px;
+    /*不一樣*/
+    position: absolute;
+    top: 80px;
+    bottom: 80px;
+    left: 0px;
+    right: 0px;
+    overflow: auto;
+    
+}
+
+#footer{
+	clear: both;
+	background-color: #ffd4d4;
+	text-align: center;
+	line-height: 80px;
+    /*不一樣*/
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
+}
+
+/*不同部分*/
+body{
+    width: 100%;
+    height: 100%;
+}
+
+.information{
+    background-color: #ffecc9;
+    width: 250px;
+    height: 500px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+	top: 50px;
+    margin: 10px;
+}
+
+.information img{
+    width: 200px;
+    position: absolute;
+	top: 25px;
+    left: 25px;
+}
+
+.clear{
+    clear: both;
+}
