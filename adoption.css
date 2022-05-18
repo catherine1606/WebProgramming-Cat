@@ -63,12 +63,14 @@ li{
 }
 */
 
+/*
 #content{
 	background-color: #f2fff2;
 	text-align: center;
 	line-height: 700px;
 	height: 700px;
-    /*不一樣*/
+    
+    不一樣
     position: absolute;
     top: 80px;
     bottom: 80px;
@@ -77,24 +79,41 @@ li{
     overflow: auto;
     
 }
+*/
 
+/*
 #footer{
 	clear: both;
 	background-color: #ffd4d4;
 	text-align: center;
 	line-height: 80px;
-    /*不一樣*/
+    不一樣
     position: absolute;
     bottom: 0px;
     left: 0px;
     right: 0px;
     overflow: hidden;
 }
+*/
 
 /*不同部分*/
 body{
     width: 100%;
     height: 100%;
+}
+
+#title{
+    width: 100%;
+    position: absolute;
+    top: 85px;
+    text-align: center;
+}
+
+#src_form{
+    width: 100%;
+    position: absolute;
+    top: 150px;
+    text-align: center;
 }
 
 .information{
@@ -104,7 +123,8 @@ body{
     display: inline-block;
     text-align: center;
     position: relative;
-	top: 50px;
+	top: 180px;
+    left: 35px;
     margin: 10px;
 }
 
@@ -113,8 +133,4 @@ body{
     position: absolute;
 	top: 25px;
     left: 25px;
-}
-
-.clear{
-    clear: both;
 }
