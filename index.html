@@ -6,14 +6,14 @@
 	<title>首頁</title>
 </head>
 <link rel="stylesheet" type="text/css" href="index.css">
-<body>
+<body onload="detect()">
 	<div id="sitebody">
 		<div id="header">
 			<div id="h_option">
 				<ul>
-					<li><a href="index.html">首頁</a></li>
-					<li><a href="adoption.html">領養</a></li>
-					<li><a href="shopping.html">購物</a></li>
+					<li onclick="location.href='index.html'">首頁</li>
+					<li onclick="location.href='adoption.html'">領養</li>
+					<li onclick="location.href='shopping.html'">購物</li>
 					<li>小遊戲</li>
 				</ul>
 			</div>
@@ -23,3 +23,4 @@
 	</div>
 </body>
 </html>
+<scrip src="index.js"></script>
