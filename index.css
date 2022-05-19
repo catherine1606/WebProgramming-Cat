@@ -62,8 +62,30 @@ li:hover{
 #content{
 	background-color: #f2fff2;
 	text-align: center;
-	line-height: 700px;
 	height: 700px;
+}
+.circle{
+	height: 10px;
+	width: 10px;
+	border-radius: 10px;
+	background: #ccc
+}
+#thumbs{
+	border: 1px solid #ccc;
+	width: 100px;
+}
+
+.small{
+	height: 10px;
+	width: 10px;
+	border-radius: 10px;
+	background: #ccc;
+	float: left;
+	margin-right: 10px;
+	margin: 0 auto;
+}
+#big{
+	height: 300px;
 }
 
 #footer{
