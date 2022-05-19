@@ -41,3 +41,12 @@ function detect(){
 		});
 	}
 }
+//選單按鈕的陰影動畫
+$('#h_option li').each(function(index){
+	$(this).mouseenter(function(){
+		$(this).animate({boxShadow: '0 0 5px #8f8f8f'});
+	});
+	$(this).mouseleave(function(){
+		$(this).animate({boxShadow: '0 0 0px #ffffff'}, 'fast');
+	});
+});
