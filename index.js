@@ -41,7 +41,7 @@ function detect(){
 		});
 	}
 }
-//選單按鈕的陰影動畫
+//選單按鈕的陰影動畫。參考網站：https://bitstorm.org/jquery/shadow-animation/
 $('#h_option li').each(function(index){
 	$(this).mouseenter(function(){
 		$(this).animate({boxShadow: '0 0 5px #8f8f8f'});
@@ -49,4 +49,26 @@ $('#h_option li').each(function(index){
 	$(this).mouseleave(function(){
 		$(this).animate({boxShadow: '0 0 0px #ffffff'}, 'fast');
 	});
+});
+
+
+$(function(){
+	var timer;
+
+	$('.small').click(function(){
+		clearTimeout(timer);
+		$('.selected').toggleClass('selected');
+
+		$(this).toggleClass('selected');
+		$('#big').attr('src', $(this).attr('src'));
+
+		var next = $('.small').index(this) + 1;
+
+		if(next == $('.small').length) next = 0;
+
+		timer=setTimeout(function(){
+			$('.small')[next].click()
+		}, 3000);
+	});
+	$('.small')[0].click();
 });
