@@ -6,7 +6,7 @@ function detect(){
 		{
 			if($(this).text() == "首頁")
 			{
-				$(this).css('background','#f0f0f0');
+				$(this).css('background','#ffe499');
 			}
 		});
 	}
@@ -16,7 +16,7 @@ function detect(){
 		{
 			if($(this).text() == "領養")
 			{
-				$(this).css('background','#f0f0f0');
+				$(this).css('background','#ffe499');
 			}
 		});
 	}
@@ -26,7 +26,7 @@ function detect(){
 		{
 			if($(this).text() == "購物")
 			{
-				$(this).css('background','#f0f0f0');
+				$(this).css('background','#ffe499');
 			}
 		});
 	}
@@ -36,7 +36,7 @@ function detect(){
 		{
 			if($(this).text() == "小遊戲")
 			{
-				$(this).css('background','#f0f0f0');
+				$(this).css('background','#ffe499');
 			}
 		});
 	}
@@ -51,6 +51,9 @@ $('#h_option li').each(function(index){
 	});
 });
 
+$('#big').change(function(){
+	$('#photo').css('background','#123456');
+});
 
 $(function(){
 	var timer;
@@ -60,8 +63,10 @@ $(function(){
 		$('.selected').toggleClass('selected');
 
 		$(this).toggleClass('selected');
-		$('#big').attr('src', $(this).attr('src'));
 
+		$('#big').attr('src', $(this).attr('src'));
+		//看看要不要寫fadein
+		
 		var next = $('.small').index(this) + 1;
 
 		if(next == $('.small').length) next = 0;
