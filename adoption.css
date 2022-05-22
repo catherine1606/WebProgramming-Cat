@@ -162,8 +162,8 @@ li:hover{
 
 /*cath-cat.html*/
 canvas{
-    width: 600;
-    height:1200;
+    /* width: 600;
+    height:1200; */
     background-color: #ffffff;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
