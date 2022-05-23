@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>小遊戲-Catch the cat</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<link rel="stylesheet" type="text/css" href="adoption.css">
+<body>
+    <div id="sitebody">
+        <div id="header">
+            <div id="h_option">
+                <ul>
+                    <li onclick="location.href='index.html'">首頁</li>
+                    <li onclick="location.href='adoption.html'">領養</li>
+                    <li onclick="location.href='shopping.html'">購物</li>
+                    <li>小遊戲</li>
+                </ul>
+            </div>
+        </div>
+        <div id="content">
+            <div id="title"><h1>Catch the cat</h1></div>
+            <canvas id="canvas" width="600" height="580"></canvas>
+        </div>
+        <div id="footer"></div>
+    </div>
+    
+    <script>
+        /*setting the game*/
+        var canvas = document.getElementById('canvas');
+            if(canvas.getContext){
+                canvasLeft = canvas.offsetLeft + canvas.clientLeft;
+                canvasTop = canvas.offsetTop + canvas.clientTop;
+                var ctx = canvas.getContext('2d');
+                var circles = [];
+                draw_map();
+            }
+
+        function draw_map(){
+            var circleRowCount = 5;    // 列數
+            var circleColumnCount = 10; // 行數
+            var circleRadius = 20;       // 半徑
+            var circlePadding = 5;      // 間隔
+            var circleOffsetTop = 60;    // 上面距離
+            var circleOffsetLeft = 87.5;   // 左邊距離
+
+            for(var c = 0; c < circleColumnCount; c++) {
+                circles[c] = [];
+                for(var r = 0; r < circleRowCount; r++) {
+                    circles[c][r] = { x: 0, y: 0, width: 40, height: 40 };
+                }
+            }
+
+            for(var c = 0; c < circleColumnCount; c++){
+                for(var r = 0; r < circleRowCount; r++){
+                    if(r % 2 == 0){
+                        circleOffsetLeft = 87.5;
+                    }
+                    else{
+                        circleOffsetLeft = 87.5 + 22.5;
+                    }
+                    var circleX = (c*(2*circleRadius+circlePadding))+circleOffsetLeft;
+                    var circleY = (r*(2*circleRadius+circlePadding))+circleOffsetTop;
+                    circles[c][r].x = circleX;
+                    circles[c][r].y = circleY;
+                    ctx.beginPath();
+                    ctx.arc(circleX, circleY, circleRadius, 0, 2*Math.PI);
+                    ctx.fillStyle = "#f7f4da";
+                    ctx.fill();
+                    ctx.closePath();
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>
