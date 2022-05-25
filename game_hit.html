@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>小遊戲-Hit the circles</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<link rel="stylesheet" type="text/css" href="adoption.css">
+<body>
+    <div id="sitebody">
+        <div id="header">
+            <div id="h_option">
+                <ul>
+                    <li onclick="location.href='index.html'">首頁</li>
+                    <li onclick="location.href='adoption.html'">領養</li>
+                    <li onclick="location.href='shopping.html'">購物</li>
+                    <li>小遊戲</li>
+                </ul>
+            </div>
+        </div>
+        <div id="content">
+            <div id="title"><h1>Hit the circles</h1></div>
+            <canvas id="canvas" width="600" height="400"></canvas>
+        </div>
+        <div id="footer"></div>
+    </div>
+    
+    <script>
+        /*setting the game*/
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+
+        // ball's attributes
+        var ballRadius = 10;
+        var ballX = 10;
+        var ballY = canvas.height/2 + 5;
+        var movingX = 3;
+        var movingY = 3;
+
+        // tool's attributes
+        var toolHeight = 5;
+        var toolWidth = 80;
+        var toolX = (canvas.width-toolWidth)/2;
+
+        // circles' attributes
+        var circleRowCount = 3;    // 列數
+        var circleColumnCount = 10; // 行數
+        var circleRadius = 20;       // 半徑
+        var circlePadding = 10;      // 間隔
+        var circleOffsetTop = 60;    // 上面距離
+        var circleOffsetLeft = 60;   // 左邊距離
+
+        var circles = [];
+        for(var c = 0; c < circleColumnCount; c++) {
+            circles[c] = [];
+            for(var r = 0; r < circleRowCount; r++) {
+                circles[c][r] = { x: 0, y: 0, status: 1 };
+            }
+        }
+
+        // count the score
+        var score = 0;
+        var lives = 2;
+        
+        document.addEventListener('mousemove', mouseMoveHandler, false);
+
+        function mouseMoveHandler(e){
+            var relativeX = e.clientX - canvas.offsetLeft;
+            if(relativeX > 0 && relativeX < canvas.width) {
+                toolX = relativeX - toolWidth/2;
+            }
+        }
+
+        function collision_detection() {
+            for(var c = 0; c < circleColumnCount; c++) {
+                for(var r = 0; r < circleRowCount; r++) {
+                    var circle = circles[c][r];
+                    if(circle.status == 1) {
+                        if(ballX > circle.x - circleRadius && ballX < circle.x + circleRadius && ballY > circle.y - circleRadius && ballY < circle.y + circleRadius) {
+                            movingY = -movingY;
+                            circle.status = 0;
+                            score++;
+                            if(score == circleRowCount * circleColumnCount) {
+                                alert('YOU WIN!!');
+                                document.location.reload();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        function draw_ball() {
+            ctx.beginPath();
+            ctx.arc(ballX, ballY, ballRadius, 0, Math.PI*2);
+            ctx.fillStyle = "black";
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function draw_tool(){
+            ctx.beginPath();
+            ctx.rect(toolX, canvas.height-toolHeight, toolWidth, toolHeight);
+            ctx.fillStyle = "black";
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function draw_circles(){
+            for(var c = 0; c < circleColumnCount; c++){
+                for(var r = 0; r < circleRowCount; r++){
+                    if(circles[c][r].status == 1){
+                        if(r % 2 == 0){
+                            circleOffsetLeft = 60;
+                        }
+                        else{
+                            circleOffsetLeft = 60 + 22.5;
+                        }
+                        var circleX = (c*(2*circleRadius+circlePadding))+circleOffsetLeft;
+                        var circleY = (r*(2*circleRadius+circlePadding))+circleOffsetTop;
+                        circles[c][r].x = circleX;
+                        circles[c][r].y = circleY;
+                        ctx.beginPath();
+                        ctx.arc(circleX, circleY, circleRadius, 0, 2*Math.PI);
+                        ctx.fillStyle = "#f7f4da";
+                        ctx.fill();
+                        ctx.closePath();
+                    }
+                    
+                }
+            }
+        }
+
+        function show_score(){
+            ctx.font = "20px";
+            ctx.fillStyle = "black";
+            ctx.fillText("Score: " + score, 8, 30);
+        }
+        
+        function drawLives() {
+            ctx.font = "20px Arial";
+            ctx.fillStyle = "black";
+            ctx.fillText("Lives: "+lives, canvas.width-80, 30);
+        }
+
+        function game(){
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            draw_circles();
+            draw_ball();
+            draw_tool();
+            show_score();
+            drawLives();
+            collision_detection();
+
+            if(ballX + movingX > canvas.width-ballRadius || ballX + movingX < ballRadius) {  // 左右界
+                movingX = -movingX;
+            }
+            if(ballY + movingY < ballRadius) {  // 上界
+                movingY = -movingY;
+            }
+            else if(ballY + movingY > canvas.height-ballRadius) {
+                if(ballX > toolX && ballX < toolX + toolWidth) {
+                    movingY = -movingY;
+                }
+                else {
+                    lives -= 1;
+                    if(lives == 0) {
+                        alert("GAME OVER");
+                        document.location.reload();
+                    }
+                    else {
+                        ballX = canvas.width - 10;
+                        ballY = canvas.height/2;
+                        moving_x = 3;
+                        moving_y = -3;
+                        toolX = (canvas.width-toolWidth)/2;
+                    }
+                }
+            }
+            ballX += movingX;
+            ballY += movingY;
+            requestAnimationFrame(game);
+        }
+
+        // start the game
+        game();
+
+    </script>
+</body>
+</html>
