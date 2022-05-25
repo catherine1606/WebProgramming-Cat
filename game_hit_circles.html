@@ -20,6 +20,7 @@
         </div>
         <div id="content">
             <div id="title"><h1>Hit the circles</h1></div>
+            <div id="src_form" onclick="set_game()">開始遊戲！</div>
             <canvas id="canvas" width="600" height="400"></canvas>
         </div>
         <div id="footer"></div>
@@ -64,29 +65,49 @@
         
         document.addEventListener('mousemove', mouseMoveHandler, false);
 
+        function set_game(){
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            draw_circles();
+            draw_ball();
+            draw_tool();
+            show_score();
+            show_lives();
+            collision_detection();
+
+            if(ballX + movingX > canvas.width-ballRadius || ballX + movingX < ballRadius) {  // 左右界
+                movingX = -movingX;
+            }
+            if(ballY + movingY < ballRadius) {  // 上界
+                movingY = -movingY;
+            }
+            else if(ballY + movingY > canvas.height-ballRadius) {
+                if(ballX > toolX && ballX < toolX + toolWidth) {
+                    movingY = -movingY;
+                }
+                else {
+                    lives -= 1;
+                    if(lives == 0) {
+                        alert("GAME OVER!");
+                        document.location.reload();
+                    }
+                    else {
+                        ballX = canvas.width - 10;
+                        ballY = canvas.height/2;
+                        moving_x = 3;
+                        moving_y = -3;
+                        toolX = (canvas.width-toolWidth)/2;
+                    }
+                }
+            }
+            ballX += movingX;
+            ballY += movingY;
+            requestAnimationFrame(set_game);
+        }
+
         function mouseMoveHandler(e){
             var relativeX = e.clientX - canvas.offsetLeft;
             if(relativeX > 0 && relativeX < canvas.width) {
                 toolX = relativeX - toolWidth/2;
-            }
-        }
-
-        function collision_detection() {
-            for(var c = 0; c < circleColumnCount; c++) {
-                for(var r = 0; r < circleRowCount; r++) {
-                    var circle = circles[c][r];
-                    if(circle.status == 1) {
-                        if(ballX > circle.x - circleRadius && ballX < circle.x + circleRadius && ballY > circle.y - circleRadius && ballY < circle.y + circleRadius) {
-                            movingY = -movingY;
-                            circle.status = 0;
-                            score++;
-                            if(score == circleRowCount * circleColumnCount) {
-                                alert('YOU WIN!!');
-                                document.location.reload();
-                            }
-                        }
-                    }
-                }
             }
         }
 
@@ -131,60 +152,36 @@
             }
         }
 
+        function collision_detection() {
+            for(var c = 0; c < circleColumnCount; c++) {
+                for(var r = 0; r < circleRowCount; r++) {
+                    var circle = circles[c][r];
+                    if(circle.status == 1) {
+                        if(ballX > circle.x - circleRadius && ballX < circle.x + circleRadius && ballY > circle.y - circleRadius && ballY < circle.y + circleRadius) {
+                            movingY = -movingY;
+                            circle.status = 0;
+                            score++;
+                            if(score == circleRowCount * circleColumnCount) {
+                                alert('YOU WIN!!');
+                                document.location.reload();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         function show_score(){
             ctx.font = "20px";
             ctx.fillStyle = "black";
             ctx.fillText("Score: " + score, 8, 30);
         }
         
-        function drawLives() {
+        function show_lives() {
             ctx.font = "20px Arial";
             ctx.fillStyle = "black";
             ctx.fillText("Lives: "+lives, canvas.width-80, 30);
         }
-
-        function game(){
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            draw_circles();
-            draw_ball();
-            draw_tool();
-            show_score();
-            drawLives();
-            collision_detection();
-
-            if(ballX + movingX > canvas.width-ballRadius || ballX + movingX < ballRadius) {  // 左右界
-                movingX = -movingX;
-            }
-            if(ballY + movingY < ballRadius) {  // 上界
-                movingY = -movingY;
-            }
-            else if(ballY + movingY > canvas.height-ballRadius) {
-                if(ballX > toolX && ballX < toolX + toolWidth) {
-                    movingY = -movingY;
-                }
-                else {
-                    lives -= 1;
-                    if(lives == 0) {
-                        alert("GAME OVER");
-                        document.location.reload();
-                    }
-                    else {
-                        ballX = canvas.width - 10;
-                        ballY = canvas.height/2;
-                        moving_x = 3;
-                        moving_y = -3;
-                        toolX = (canvas.width-toolWidth)/2;
-                    }
-                }
-            }
-            ballX += movingX;
-            ballY += movingY;
-            requestAnimationFrame(game);
-        }
-
-        // start the game
-        game();
-
     </script>
 </body>
 </html>
