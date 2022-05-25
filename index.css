@@ -120,7 +120,6 @@ canvas{
 #content_another{
 	background-color: #f2fff2;
 	text-align: center;
-	height: 700px;
     overflow: auto;
 }
 
@@ -227,10 +226,12 @@ canvas{
 }
 
 #hint{
-	margin-bottom: 20px;
+	color:#767070dc;
 }
 
 #innerForm{  /*the table inside the form*/
+	margin-top: 20px;
+	margin-bottom: 20px;
 	margin-left:auto; 
 	margin-right:auto;
 	text-align: left;
