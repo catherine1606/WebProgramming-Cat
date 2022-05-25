@@ -90,7 +90,7 @@ li:hover{
 }
 
 #title h1{
-    margin: 0px;
+    margin-bottom: 20px;
 }
 
 #src_form{
@@ -162,8 +162,5 @@ li:hover{
 
 /*cath-cat.html*/
 canvas{
-    /* width: 600;
-    height:1200; */
     background-color: #ffffff;
-    /* margin-top: 20px; */
 }
