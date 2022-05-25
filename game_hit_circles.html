@@ -28,13 +28,13 @@
     
     <script>
         /*setting the game*/
-        var canvas = document.getElementById('canvas');
+        var canvas = document.getElementById('myCanvas');
         var ctx = canvas.getContext('2d');
 
         // ball's attributes
         var ballRadius = 10;
-        var ballX = 10;
-        var ballY = canvas.height/2 + 5;
+        var ballX = getRand(10,canvas.width-10);  // Random發球的x位置
+        var ballY = canvas.height/2 + 30;
         var movingX = 3;
         var movingY = 3;
 
@@ -65,6 +65,10 @@
         
         document.addEventListener('mousemove', mouseMoveHandler, false);
 
+        function getRand(min,max){
+            return Math.floor(Math.random()*(max-min+1))+min;
+        };
+
         function set_game(){
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             draw_circles();
@@ -91,7 +95,7 @@
                         document.location.reload();
                     }
                     else {
-                        ballX = canvas.width - 10;
+                        ballX = getRand(10,canvas.width-10);
                         ballY = canvas.height/2;
                         moving_x = 3;
                         moving_y = -3;
