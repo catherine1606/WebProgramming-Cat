@@ -104,7 +104,7 @@ li:hover{
 	clear: both;
 	background-color: #ffd4d4;
 	text-align: center;
-	line-height: 80px;
+	height: 80px;
 }
 /*遊戲部分*/
 canvas{
@@ -203,7 +203,43 @@ canvas{
     height: 30px;
 }
 
-/*game_hit circles*/
+/*game_hit_circles.html*/
 #myCanvas{
     background-color: #ffffff;
+}
+
+/*adoption_form.html*/
+#notice{
+	margin-left:auto; 
+	margin-right:auto;
+	margin-top: 30px;
+	text-align: left;
+}
+
+#notice caption{
+	font-size: 30px;
+	padding-bottom: 10px;
+}
+
+#formTitle{
+	margin-top: 40px;
+	margin-bottom: 0px;
+}
+
+#hint{
+	margin-bottom: 20px;
+}
+
+#innerForm{  /*the table inside the form*/
+	margin-left:auto; 
+	margin-right:auto;
+	text-align: left;
+}
+
+span{
+	color: red;
+}
+
+#button{
+	text-align: center;
 }

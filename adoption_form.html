@@ -14,19 +14,79 @@
                     <li onclick="location.href='index.html'">首頁</li>
                     <li onclick="location.href='adoption.html'">領養</li>
                     <li onclick="location.href='shopping.html'">購物</li>
-                    <li>小遊戲</li>
+                    <li onclick="location.href='game_hit_circles.html'">小遊戲</li>
                 </ul>
             </div>
         </div>
         <div id="content_another">
-            <table id="form">
+            <table id="notice">
+                <caption><b>領養注意事項</b></caption>
+                <!-- 第1點 -->
                 <tr>
-                    <td>姓名</td>
+                    <td>1.</td>
+                    <td>養貓不是件容易的事，領養前請先自我判斷自己適合養什麼貓（例如：成貓或幼貓）。</td>
+                </tr>
+                <!-- 第2點 -->
+                <tr>
+                    <td>2.</td>
+                    <td>請先自我評估，包含：經濟狀況、居家環境、陪伴時間、同住家人意願等。</td>
+                </tr>
+                <!-- 第3點 -->
+                <tr>
+                    <td>3.</td>
+                    <td>須事前準備基本用品：貓食、貓砂與貓砂盆、食碗與水碗、睡床、貓抓板等。</td>
+                </tr>
+                <!-- 第4點 -->
+                <tr>
+                    <td>4.</td>
+                    <td>幼貓需要在食物、醫療等花更多的心力和時間照顧，且個性尚不穩定易有咬人、抓人、</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>破壞家具等行為，必須額外訓練。</td>
+                </tr>
+                <!-- 第5點 -->
+                <tr>
+                    <td>5.</td>
+                    <td>領養前，需向送養人確認貓咪各項健康狀況，且熟悉貓咪個性。</td>
                 </tr>
             </table>
+            <h1 id="formTitle">填寫表單</h1>
+            <div id="hint">如欲領養請填寫表單提供基本資料、簡述概況和希望領養什麼樣的貓咪，我們將與您聯繫</div>
+            <form id="adoptionForm" action="http://httpbin.org/post" method="post">
+                <table id="innerForm">
+                    <tr>
+                        <td><span>*</span>姓名： </td>
+                        <td><input name="name" type="text" required></td>
+                    </tr>
+                    <tr>
+                        <td><span>*</span>Email：</td>
+                        <td><input name="email" type="email" required></td>
+                    </tr>
+                    <tr>
+                        <td><span>*</span>電話：</td>
+                        <td><input name="phone" type="tel" required></td>
+                    </tr>
+                    <tr>
+                        <td><span>*</span>簡述：</td>
+                        <td><textarea name="word" rows="5" cols="50" required></textarea></td>
+                    </tr>
+                    <tr>
+                        <td id="button" colspan="2">
+                            <input name="submit" type="submit" value="確定送出">
+                            <input name="reset" type="reset" value="清除重填">
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
         <div id="footer"></div>
     </div>
 </body>
 </html>
 <script src="index.js"></script>
+
+
+<!-- 
+<input name="submit" type="submit" value="Submit">
+<input name="reste" type="reset" value="Reset"> --> 
