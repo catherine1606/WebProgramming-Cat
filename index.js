@@ -6,7 +6,8 @@ function detect(){
 		{
 			if($(this).text() == "首頁")
 			{
-				$(this).css('background','#ffe499');
+				$(this).css('background','#ffbf00');
+				$(this).css('color','#ffffff');
 			}
 		});
 	}
@@ -16,7 +17,8 @@ function detect(){
 		{
 			if($(this).text() == "領養")
 			{
-				$(this).css('background','#ffe499');
+				$(this).css('background','#ffbf00');
+				$(this).css('color','#ffffff');
 			}
 		});
 	}
@@ -26,7 +28,8 @@ function detect(){
 		{
 			if($(this).text() == "購物")
 			{
-				$(this).css('background','#ffe499');
+				$(this).css('background','#ffbf00');
+				$(this).css('color','#ffffff');
 			}
 		});
 	}
@@ -36,7 +39,8 @@ function detect(){
 		{
 			if($(this).text() == "小遊戲")
 			{
-				$(this).css('background','#ffe499');
+				$(this).css('background','#ffbf00');
+				$(this).css('color','#ffffff');
 			}
 		});
 	}
