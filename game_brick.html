@@ -126,13 +126,24 @@
         //if (myGameArea.keys && myGameArea.keys[38]) {myGamePiece.speedY = -1; }
         //if (myGameArea.keys && myGameArea.keys[40]) {myGamePiece.speedY = 1; }
     }
+    function updateGameArea() {
+    if (myGamePiece.crashWith(myObstacle)) {
+        myGameArea.stop();
+    } else {
+        myGameArea.clear();
+        myObstacle.update();
+        myGamePiece.x += myGamePiece.speedX;
+        myGamePiece.y += myGamePiece.speedY;    
+        myGamePiece.update();
+    }
+}
     //現在的功能：障礙物可以移動，但是方塊不能跳，只能左右移動。
     //參考網站：https://www.w3schools.com/graphics/game_obstacles.asp
 
-    function everyinterval(n) {
-      if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
-      return false;
-    }
+    //function everyinterval(n) {
+      //if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
+      //return false;
+    //}
 </script>
 
 </body>
