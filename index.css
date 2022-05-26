@@ -39,6 +39,12 @@ body{
 	font-weight: 800;
 	font-size: 20px;
 }
+#title_cat{
+	line-height: 50px;
+	font-size: 50px;
+	font-weight: bold;
+	padding: 10px;
+}
 li:hover{
 	cursor: pointer;
 }
@@ -46,45 +52,34 @@ ul{
 	margin: 0 auto;
 	line-height: 100px;
 }
-/*
-li:hover{
-	box-shadow: 0px 0px 5px #8f8f8f;
-	background-color: #ffffff;
-	cursor: pointer;
-}*/
-/*
-#sidebar_left{
-	background-color: #ffecc9;
-	width: 120px;
-	float: left;
+#member{
+	height: 25px;
+	position: relative;
+	float: right;
+	margin: 35px;
+	color: #ccc;
 }
 
-#sidebar_right{
-	background-color: #ffecc9;
-	width: 120px;
-	text-align: center;
-	line-height: 400px;
-	float: right;
+#member:hover{
+	cursor: pointer;
 }
-*/
 
 #content{
 	margin: 0 auto;
 	text-align: center;
-	height: 500px;
-	box-shadow: 1px, 1px, 3px, #ccc;
 	
 }
+
 #title{
 	font-size: 35px;
 }
+
 #photo{
 	background-color: #ffffff;
-	height: 550px;
+	height: 530px;
 	width: 1000px;
 	margin: 0 auto;
 	margin-top: 30px;
-	border: 1px solid #ccc;
 	border-radius: 10px;
 }
 #thumbs{
@@ -110,14 +105,80 @@ li:hover{
 }
 #big{
 	height: 400px;
+	border-radius: 10px;
 }
 
 #footer{
 	clear: both;
-	background-color: #ffd4d4;
+	background-color: #ddd;
 	text-align: center;
 	height: 80px;
+	margin-top: 80px;
 }
+
+/*shopping*/
+#star{
+	width: 1200px;
+	margin: 0 auto;
+	margin-top: 30px;
+	background-color: #ffffff;
+	border-radius: 10px;
+}
+#title_star{
+	line-height: 50px;
+	font-size: 50px;
+	font-weight: bold;
+	padding: 10px;
+}
+#table_star{
+	margin: 0 auto;
+}
+#table_star td{
+	padding: 10px;
+}
+#table_star div{
+	width: 250px;
+	height: 250px;
+	background-color: #ffffff;
+	border-radius: 10px;
+	box-shadow: 2px 2px 4px #ccc;
+	line-height: 250px;
+	font-size: 35px;
+	color: #ff7070;
+	margin-bottom: 15px;
+}
+
+#sort{
+	width: 1200px;
+	margin: 0 auto;
+	margin-top: 30px;
+	background-color: #ffffff;
+	border-radius: 10px;
+}
+#title_sort{
+	line-height: 50px;
+	font-size: 50px;
+	font-weight: bold;
+	padding: 10px;
+}
+#table_sort{
+	margin: 0 auto;
+}
+#table_sort td{
+	padding: 10px;
+}
+#table_sort div{
+	width: 250px;
+	height: 250px;
+	background-color: #ffffff;
+	border-radius: 10px;
+	box-shadow: 2px 2px 4px #ccc;
+	line-height: 250px;
+	font-size: 35px;
+	color: #ff7070;
+	margin-bottom: 15px;
+}
+
 /*遊戲部分*/
 .canvas{/*canvas 改成class*/
 	width: 500px;
@@ -129,21 +190,6 @@ li:hover{
 }
 
 /*Another Style*/
-#content_another{
-	background-color: #f2fff2;
-	text-align: center;
-    overflow: auto;
-}
-
-#title_another{
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-}
-
-#title_another h1{
-    margin-bottom: 20px;
-}
 
 #src_form{
     background-color: #ffffff;
@@ -152,8 +198,6 @@ li:hover{
     padding-top: 10px;
     padding-bottom: 10px;
     margin: 0px auto;   /*置中*/
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 
 #src_form:hover{
@@ -162,6 +206,19 @@ li:hover{
 }
 
 /*adoption.html*/
+#adopt{
+	width: 1400px;
+	margin: 0 auto;
+	margin-top: 30px;
+	background-color: #ffffff;
+	border-radius: 10px;
+}
+#title_adopt{
+	line-height: 50px;
+	font-size: 50px;
+	font-weight: bold;
+	padding: 10px;
+}
 #wrap{
     display: flex;
     flex-wrap: wrap;
