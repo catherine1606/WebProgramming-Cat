@@ -54,8 +54,17 @@ $('#h_option li').each(function(index){
 		$(this).animate({boxShadow: '0 0 0px #ffffff'}, 'fast');
 	});
 });
+//會員icon變色
+$('#member').each(function(index){
+	$(this).mouseenter(function(){
+		$(this).attr('src','./index_photo/member2.png');
+	});
+	$(this).mouseleave(function(){
+		$(this).attr('src','./index_photo/member1.png');
+	});
+});
 
-$('#big').change(function(){
+$('#big').change(function(){//照片自動切換
 	$('#photo').css('background','#123456');
 });
 

@@ -4,11 +4,13 @@
 	<meta charset="utf-8">
 	<title>領養</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jquery.animate-shadow-min.js"></script>
 </head>
 <link rel="stylesheet" type="text/css" href="index.css">
 <body onload="detect()">
     <div id="sitebody">
         <div id="header">
+            <img id="member" src="./index_photo/member1.png" onclick="location.href='member.html'">
             <div id="h_option">
                 <ul>
                     <li onclick="location.href='index.html'">首頁</li>
@@ -18,148 +20,150 @@
                 </ul>
             </div>
         </div>
-        <div id="content_another">
-            <div id="title_another"><h1>貓咪介紹</h1></div>
-            <div id="src_form" onclick="location.href='adoption_form.html'">我要領養</div>
-            <div id="wrap">
-                <!--No.1-->
-                <div class="inner_wrap">
-                    <div class="space"></div>
-                    <div class="photo">
-                        <img src="adoption_photo/cat1.png">
+        <div id="content">
+            <div id="adopt">
+                <div id="title_adopt">貓咪介紹</div>
+                <div id="src_form" onclick="location.href='adoption_form.html'">我要領養</div>
+                <div id="wrap">
+                    <!--No.1-->
+                    <div class="inner_wrap">
+                        <div class="space"></div>
+                        <div class="photo">
+                            <img src="adoption_photo/cat1.png">
+                        </div>
+                        <div class="information">
+                            <div class="row"></div>
+                            <div class="row">所在地：基隆中山區</div>
+                            <div class="row">小名：-</div>
+                            <div class="row">年齡：-</div>
+                            <div class="row">性別：母</div>
+                        </div>
                     </div>
-                    <div class="information">
-                        <div class="row"></div>
-                        <div class="row">所在地：基隆中山區</div>
-                        <div class="row">小名：-</div>
-                        <div class="row">年齡：-</div>
-                        <div class="row">性別：母</div>
+                    <!--No.2-->
+                    <div class="inner_wrap">
+                        <div class="space"></div>
+                        <div class="photo">
+                            <img src="adoption_photo/cat2.png">
+                        </div>
+                        <div class="information">
+                            <div class="row"></div>
+                            <div class="row">所在地：新竹縣新埔鎮</div>
+                            <div class="row">小名：-</div>
+                            <div class="row">年齡：-</div>
+                            <div class="row">性別：母</div>
+                        </div>
                     </div>
-                </div>
-                <!--No.2-->
-                <div class="inner_wrap">
-                    <div class="space"></div>
-                    <div class="photo">
-                        <img src="adoption_photo/cat2.png">
+                    <!--No.3-->
+                    <div class="inner_wrap">
+                        <div class="space"></div>
+                        <div class="photo">
+                            <img src="adoption_photo/cat3.png">
+                        </div>
+                        <div class="information">
+                            <div class="row"></div>
+                            <div class="row">所在地：台北市</div>
+                            <div class="row">小名：-</div>
+                            <div class="row">年齡：-</div>
+                            <div class="row">性別：公</div>
+                        </div>
                     </div>
-                    <div class="information">
-                        <div class="row"></div>
-                        <div class="row">所在地：新竹縣新埔鎮</div>
-                        <div class="row">小名：-</div>
-                        <div class="row">年齡：-</div>
-                        <div class="row">性別：母</div>
+                    <!--No.4-->
+                    <div class="inner_wrap">
+                        <div class="space"></div>
+                        <div class="photo">
+                            <img src="adoption_photo/cat4.png">
+                        </div>
+                        <div class="information">
+                            <div class="row"></div>
+                            <div class="row">所在地：苗栗縣苑裡鎮</div>
+                            <div class="row">小名：-</div>
+                            <div class="row">年齡：-</div>
+                            <div class="row">性別：公</div>
+                        </div>
                     </div>
-                </div>
-                <!--No.3-->
-                <div class="inner_wrap">
-                    <div class="space"></div>
-                    <div class="photo">
-                        <img src="adoption_photo/cat3.png">
+                    <!--No.5-->
+                    <div class="inner_wrap">
+                        <div class="space"></div>
+                        <div class="photo">
+                            <img src="adoption_photo/cat5.png">
+                        </div>
+                        <div class="information">
+                            <div class="row"></div>
+                            <div class="row">所在地：苗栗縣</div>
+                            <div class="row">小名：-</div>
+                            <div class="row">年齡：-</div>
+                            <div class="row">性別：母</div>
+                        </div>
                     </div>
-                    <div class="information">
-                        <div class="row"></div>
-                        <div class="row">所在地：台北市</div>
-                        <div class="row">小名：-</div>
-                        <div class="row">年齡：-</div>
-                        <div class="row">性別：公</div>
+                    <!--No.6-->
+                    <div class="inner_wrap">
+                        <div class="space"></div>
+                        <div class="photo">
+                            <img src="adoption_photo/cat6.png">
+                        </div>
+                        <div class="information">
+                            <div class="row"></div>
+                            <div class="row">所在地：台北市</div>
+                            <div class="row">小名：-</div>
+                            <div class="row">年齡：-</div>
+                            <div class="row">性別：公</div>
+                        </div>
                     </div>
-                </div>
-                <!--No.4-->
-                <div class="inner_wrap">
-                    <div class="space"></div>
-                    <div class="photo">
-                        <img src="adoption_photo/cat4.png">
+                    <!--No.7-->
+                    <div class="inner_wrap">
+                        <div class="space"></div>
+                        <div class="photo">
+                            <img src="adoption_photo/cat7.png">
+                        </div>
+                        <div class="information">
+                            <div class="row"></div>
+                            <div class="row">所在地：台北市</div>
+                            <div class="row">小名：Peace</div>
+                            <div class="row">年齡：2歲</div>
+                            <div class="row">性別：公</div>
+                        </div>
                     </div>
-                    <div class="information">
-                        <div class="row"></div>
-                        <div class="row">所在地：苗栗縣苑裡鎮</div>
-                        <div class="row">小名：-</div>
-                        <div class="row">年齡：-</div>
-                        <div class="row">性別：公</div>
+                    <!--No.8-->
+                    <div class="inner_wrap">
+                        <div class="space"></div>
+                        <div class="photo">
+                            <img src="adoption_photo/cat8.png">
+                        </div>
+                        <div class="information">
+                            <div class="row"></div>
+                            <div class="row">所在地：台北市中正區</div>
+                            <div class="row">小名：如意</div>
+                            <div class="row">年齡：22週</div>
+                            <div class="row">性別：母</div>
+                        </div>
                     </div>
-                </div>
-                <!--No.5-->
-                <div class="inner_wrap">
-                    <div class="space"></div>
-                    <div class="photo">
-                        <img src="adoption_photo/cat5.png">
+                    <!--No.9-->
+                    <div class="inner_wrap">
+                        <div class="space"></div>
+                        <div class="photo">
+                            <img src="adoption_photo/cat9.png">
+                        </div>
+                        <div class="information">
+                            <div class="row"></div>
+                            <div class="row">所在地：台中市霧峰區</div>
+                            <div class="row">小名：點點</div>
+                            <div class="row">年齡：20週</div>
+                            <div class="row">性別：公</div>
+                        </div>
                     </div>
-                    <div class="information">
-                        <div class="row"></div>
-                        <div class="row">所在地：苗栗縣</div>
-                        <div class="row">小名：-</div>
-                        <div class="row">年齡：-</div>
-                        <div class="row">性別：母</div>
-                    </div>
-                </div>
-                <!--No.6-->
-                <div class="inner_wrap">
-                    <div class="space"></div>
-                    <div class="photo">
-                        <img src="adoption_photo/cat6.png">
-                    </div>
-                    <div class="information">
-                        <div class="row"></div>
-                        <div class="row">所在地：台北市</div>
-                        <div class="row">小名：-</div>
-                        <div class="row">年齡：-</div>
-                        <div class="row">性別：公</div>
-                    </div>
-                </div>
-                <!--No.7-->
-                <div class="inner_wrap">
-                    <div class="space"></div>
-                    <div class="photo">
-                        <img src="adoption_photo/cat7.png">
-                    </div>
-                    <div class="information">
-                        <div class="row"></div>
-                        <div class="row">所在地：台北市</div>
-                        <div class="row">小名：Peace</div>
-                        <div class="row">年齡：2歲</div>
-                        <div class="row">性別：公</div>
-                    </div>
-                </div>
-                <!--No.8-->
-                <div class="inner_wrap">
-                    <div class="space"></div>
-                    <div class="photo">
-                        <img src="adoption_photo/cat8.png">
-                    </div>
-                    <div class="information">
-                        <div class="row"></div>
-                        <div class="row">所在地：台北市中正區</div>
-                        <div class="row">小名：如意</div>
-                        <div class="row">年齡：22週</div>
-                        <div class="row">性別：母</div>
-                    </div>
-                </div>
-                <!--No.9-->
-                <div class="inner_wrap">
-                    <div class="space"></div>
-                    <div class="photo">
-                        <img src="adoption_photo/cat9.png">
-                    </div>
-                    <div class="information">
-                        <div class="row"></div>
-                        <div class="row">所在地：台中市霧峰區</div>
-                        <div class="row">小名：點點</div>
-                        <div class="row">年齡：20週</div>
-                        <div class="row">性別：公</div>
-                    </div>
-                </div>
-                <!--No.10-->
-                <div class="inner_wrap">
-                    <div class="space"></div>
-                    <div class="photo">
-                        <img src="adoption_photo/cat10.png">
-                    </div>
-                    <div class="information">
-                        <div class="row"></div>
-                        <div class="row">所在地：台北市松山區</div>
-                        <div class="row">小名：月娘</div>
-                        <div class="row">年齡：2歲</div>
-                        <div class="row">性別：母</div>
+                    <!--No.10-->
+                    <div class="inner_wrap">
+                        <div class="space"></div>
+                        <div class="photo">
+                            <img src="adoption_photo/cat10.png">
+                        </div>
+                        <div class="information">
+                            <div class="row"></div>
+                            <div class="row">所在地：台北市松山區</div>
+                            <div class="row">小名：月娘</div>
+                            <div class="row">年齡：2歲</div>
+                            <div class="row">性別：母</div>
+                        </div>
                     </div>
                 </div>
             </div>
