@@ -46,7 +46,7 @@ function detect(){
 	}
 }
 //選單按鈕的陰影動畫。參考網站：https://bitstorm.org/jquery/shadow-animation/
-$('#h_option li').each(function(index){
+$('.menu_option li').each(function(index){
 	$(this).mouseenter(function(){
 		$(this).animate({boxShadow: '0 0 5px #8f8f8f'});
 	});
@@ -89,4 +89,9 @@ $(function(){
 		}, 3000);
 	});
 	$('.small')[0].click();
+});
+
+//購物遮罩
+$('#div_star1').click(function(){
+	$('mask_star1').css('display','inline-block');
 });
