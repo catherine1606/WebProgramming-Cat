@@ -34,7 +34,7 @@
 
         // ball's attributes
         var ballRadius = 10;
-        var ballX = getRand(10,canvas.width-10);  // Random發球的x位置
+        var ballX = get_random(10,canvas.width-10);  // Random發球的x位置
         var ballY = canvas.height/2 + 30;
         var movingX = 3;
         var movingY = 3;
@@ -64,9 +64,9 @@
         var score = 0;
         var lives = 2;
         
-        document.addEventListener('mousemove', mouseMoveHandler, false);
+        document.addEventListener('mousemove', mouse_move_handler, false);
 
-        function getRand(min,max){
+        function get_random(min,max){
             return Math.floor(Math.random()*(max-min+1))+min;
         };
 
@@ -92,11 +92,11 @@
                 else {
                     lives -= 1;
                     if(lives == 0) {
-                        alert("GAME OVER!");
+                        alert('FAIL!')
                         document.location.reload();
                     }
                     else {
-                        ballX = getRand(10,canvas.width-10);
+                        ballX = get_random(10,canvas.width-10);
                         ballY = canvas.height/2;
                         moving_x = 2;
                         moving_y = -2;
@@ -109,7 +109,7 @@
             requestAnimationFrame(set_game);
         }
 
-        function mouseMoveHandler(e){
+        function mouse_move_handler(e){
             var relativeX = e.clientX - canvas.offsetLeft;
             if(relativeX > 0 && relativeX < canvas.width) {
                 toolX = relativeX - toolWidth/2;
@@ -167,7 +167,7 @@
                             circle.status = 0;
                             score++;
                             if(score == circleRowCount * circleColumnCount) {
-                                alert('YOU WIN!!');
+                                alert('YOU WIN!!!')
                                 document.location.reload();
                             }
                         }
