@@ -94,8 +94,8 @@ $(function(){
 //購物遮罩
 $('.menu_star li').each(function(index){
 	$(this).mouseenter(function(){
-		var text = ["貓砂","貓跳台","貓零食","貓砂盆"];
-		$(this).prepend('<div id="mask_star">'+ text[index] +'</div>');
+		var text_star = ["貓砂","貓跳台","貓零食","貓砂盆"];
+		$(this).prepend('<div id="mask_star">'+ text_star[index] +'</div>');
 		$(this).children('#mask_star').fadeIn('5000');
 		//$('#mask_star').fadeIn('');
 	});
@@ -103,10 +103,11 @@ $('.menu_star li').each(function(index){
 		$('#mask_star').remove();
 	});
 });
+
 $('.menu_sort li').each(function(index){
 	$(this).mouseenter(function(){
-		var text = ["貓食品","貓玩具","貓","貓砂盆"];
-		$(this).prepend('<div id="mask_sort">'+ text[index] +'</div>');
+		var text_sort = ["貓食品","貓玩具","貓日常用品","貓咪療癒小物"];
+		$(this).prepend('<div id="mask_sort">'+ text_sort[index] +'</div>');
 		$(this).children('#mask_sort').fadeIn('5000');
 		//$('#mask_star').fadeIn('');
 	});
