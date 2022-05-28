@@ -10,6 +10,8 @@
 <body onload="detect()">
     <div id="sitebody">
         <div id="header">
+            <img id="icon" src="./index_photo/icon.png" onclick="location.href='index.html'">
+            <img id="member" src="./index_photo/member1.png" onclick="location.href='member.html'">
             <div class="h_option">
                 <ul class="menu_option">
                     <li onclick="location.href='index.html'">首頁</li>
@@ -20,8 +22,8 @@
             </div>
         </div>
         <div id="content">
-            <div id="title"><h1>Hit the circles</h1></div>
-            <div id="src_form" onclick="set_game()">開始遊戲！</div>
+            <div id="title_circle"><h1>Hit the circles</h1></div>
+            <div id="div_start" onclick="set_game()">開始遊戲！</div>
             <canvas id="myCanvas" width="600" height="400"></canvas>
         </div>
         <div id="footer"></div>
