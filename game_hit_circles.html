@@ -45,6 +45,9 @@
         var canvas = $('#myCanvas')[0];
         var ctx = canvas.getContext('2d');
 
+        // game狀態（1:進行中, 0:結束）
+        var gameStatus = 1;
+
         // ball's attributes
         var ballRadius = 10;
         var ballX = get_random(10,canvas.width-10);  // Random發球的x位置
@@ -84,6 +87,9 @@
         };
 
         function set_game(){
+            // 讓「開始遊戲」鍵失效
+            $('#div_start').attr('onclick','');
+
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             draw_circles();
             draw_ball();
@@ -105,8 +111,8 @@
                 else {
                     lives -= 1;
                     if(lives == 0) {
-                        alert('FAIL!')
-                        document.location.reload();
+                        lose();
+                        gameStatus = 0;  // lose
                     }
                     else {
                         ballX = get_random(10,canvas.width-10);
@@ -119,7 +125,9 @@
             }
             ballX += movingX;
             ballY += movingY;
-            requestAnimationFrame(set_game);
+            if(gameStatus == 1){  // 判斷遊戲是否繼續
+                requestAnimationFrame(set_game);
+            }
         }
 
         function mouse_move_handler(e){
@@ -180,8 +188,8 @@
                             circle.status = 0;
                             score++;
                             if(score == circleRowCount * circleColumnCount) {
-                                alert('YOU WIN!!!')
-                                document.location.reload();
+                                gameStatus = 0;
+                                win();
                             }
                         }
                     }
@@ -190,7 +198,7 @@
         }
 
         function show_score(){
-            ctx.font = "20px";
+            ctx.font = "20px Arial";
             ctx.fillStyle = "black";
             ctx.fillText("Score: " + score, 8, 30);
         }
@@ -199,6 +207,43 @@
             ctx.font = "20px Arial";
             ctx.fillStyle = "black";
             ctx.fillText("Lives: "+lives, canvas.width-80, 30);
+        }
+
+        function lose(){
+            ctx.globalAlpha = 0.5;
+            ctx.fillStyle = "gray";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.globalAlpha = 1;
+            ctx.font = "50px Arial";
+            ctx.fillStyle = "black";
+            ctx.fillText("FAIL!", canvas.width/2-50, canvas.height/2+20);
+
+            ctx.font = "20px Arial";
+            ctx.fillText("請點選Canvas任一處重置遊戲", 175, canvas.height/2+60);
+
+            $('#myCanvas').attr('onclick','reload()');
+        }
+
+        function win(){
+            ctx.globalAlpha = 0.5;
+            ctx.fillStyle = "white";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.globalAlpha = 1;
+            ctx.font = "50px Arial";
+            ctx.fillStyle = "black";
+            ctx.fillText("WIN!", canvas.width/2-50, canvas.height/2+20);
+
+            ctx.font = "20px Arial";
+            ctx.fillText("請點選Canvas任一處重置遊戲", 180, canvas.height/2+60);
+
+            $('#myCanvas').attr('onclick','reload()');
+        }
+
+        function reload(){
+            $('#div_start').attr('onclick','set_game()');
+            document.location.reload();
         }
     </script>
 </body>
