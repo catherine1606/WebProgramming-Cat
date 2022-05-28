@@ -89,7 +89,7 @@ body{
 #thumbs{
 	width: 100px;
 	margin: 0 auto;
-	margin-top: -30px;
+	margin-top: 0px;
 }
 
 .small{
@@ -138,10 +138,7 @@ body{
 .menu_star li{
 	list-style: none; 
     float: left;
-    padding: 0;  
-    padding-left: 5px; 
-    padding-right: 5px;
-
+    padding: 0;
     display: inline-block;
 	width: 250px;
 	height: 250px;
@@ -150,7 +147,6 @@ body{
 	box-shadow: 2px 2px 4px #ccc;
 	line-height: 250px;
 	font-size: 35px;
-	color: #ff7070;
 	margin: 10px 10px 30px 10px;
 	overflow: hidden;
 }
@@ -162,6 +158,7 @@ body{
 	font-size: 50px;
 	font-weight: bold;
 	padding: 10px;
+	color: #ff7070;
 }
 .star ul{
 	margin: 0 auto;
@@ -169,16 +166,21 @@ body{
 
 li img{
 	height: 250px;
-	margin: 0 auto;	
+	margin: 0 auto;
+	padding: 0;
+}
+li #mask_star:hover{
+	cursor: pointer;
 }
 
 #mask_star{
-	height: 250px;
+	font-weight: bold;
 	width: 250px;
+	height: 250px;
 	border-radius: 10px;
 	position: absolute;
-	background-color: #000000;
-	opacity: 0.5;
+	background-color: rgba(255, 255, 255, 0.7);
+	color: rgba(5,5,5,1);
 	display: none;
 }
 #sort{

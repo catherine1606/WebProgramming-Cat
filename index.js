@@ -63,8 +63,8 @@ $('#member').each(function(index){
 		$(this).attr('src','./index_photo/member1.png');
 	});
 });
-
-$('#big').change(function(){//照片自動切換
+//照片自動切換
+$('#big').change(function(){
 	$('#photo').css('background','#123456');
 });
 
@@ -92,6 +92,15 @@ $(function(){
 });
 
 //購物遮罩
-$('#div_star1').click(function(){
-	$('mask_star1').css('display','inline-block');
+$('.menu_star li').each(function(index){
+	$(this).mouseenter(function(){
+		var num = index;
+		var text = ["貓砂","貓跳台","貓零食","貓砂盆"];
+		$(this).prepend('<div id="mask_star">'+ text[index] +'</div>');
+		$(this).children('#mask_star').fadeIn('5000');
+		//$('#mask_star').fadeIn('');
+	});
+	$(this).mouseleave(function(){
+		$('#mask_star').remove();
+	});
 });
