@@ -57,10 +57,10 @@ $('.menu_option li').each(function(index){
 //會員icon變色
 $('#member').each(function(index){
 	$(this).mouseenter(function(){
-		$(this).attr('src','./index_photo/member2.png');
+		$(this).attr('src','./media/member2.png');
 	});
 	$(this).mouseleave(function(){
-		$(this).attr('src','./index_photo/member1.png');
+		$(this).attr('src','./media/member1.png');
 	});
 });
 //照片自動切換
