@@ -136,6 +136,7 @@ body{
 }
 
 /*shopping*/
+/*主打星*/
 .star{
 	width: 80%;
 	margin: 0 auto;
@@ -196,6 +197,7 @@ li #mask_star:hover{
 	color: rgba(5,5,5,1);
 	display: none;
 }
+/*熱門商品*/
 #sort{
 	width: 80%;
 	margin: 0 auto;
@@ -203,13 +205,34 @@ li #mask_star:hover{
 	background-color: #ffffff;
 	border-radius: 10px;
 }
+.menu_sort{
+	margin: 0; 
+    padding: 0; 
+    display: inline-block;
+}
+.menu_sort li{
+	list-style: none; 
+    float: left;
+    padding: 0;
+    display: inline-block;
+	width: 250px;
+	height: 250px;
+	background-color: #ffffff;
+	border-radius: 10px;
+	box-shadow: 2px 2px 4px #ccc;
+	line-height: 250px;
+	font-size: 35px;
+	margin: 10px 10px 30px 10px;
+	overflow: hidden;
+}
 #title_sort{
 	line-height: 50px;
 	font-size: 50px;
 	font-weight: bold;
 	padding: 10px;
+	color: #ff7070;
 }
-#div_sort{
+#menu_sort{
 	display: inline-block;
 	width: 250px;
 	height: 250px;
@@ -221,7 +244,32 @@ li #mask_star:hover{
 	color: #ff7070;
 	margin: 10px 10px 30px 10px;
 }
+.menu_sort li{
+	*display: inline;
+}
+.sort ul{
+	margin: 0 auto;
+}
 
+li img{
+	height: 250px;
+	margin: 0 auto;
+	padding: 0;
+}
+li #mask_sort:hover{
+	cursor: pointer;
+}
+
+#mask_sort{
+	font-weight: bold;
+	width: 250px;
+	height: 250px;
+	border-radius: 10px;
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.7);
+	color: rgba(5,5,5,1);
+	display: none;
+}
 /*遊戲部分*/
 .canvas{/*canvas 改成class*/
 	width: 500px;
