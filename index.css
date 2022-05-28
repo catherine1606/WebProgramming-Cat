@@ -465,3 +465,18 @@ span{
 #button{
 	text-align: center;
 }
+<<<<<<< Updated upstream
+=======
+/*member*/
+.login{
+	width: 300px;
+	height: 300px;
+	margin: 0 auto;
+	margin-top: 50px;
+	border-radius: 10px;
+	background-color: #ffffff;
+}
+#table_login{
+	margin: 0 auto;
+}
+>>>>>>> Stashed changes
