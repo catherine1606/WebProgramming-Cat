@@ -24,20 +24,26 @@
 		</div>
 		<div id="content">
 			<div class="login">
-				<table id="table_login">
+				<table border="1" id="table_title">
 					<tr>
-						<td>用戶名：</td>
-					</tr>
-					<tr>
-						<td>E-mail：</td>
-					</tr>
-					<tr>
-						<td>密碼：</td>
-					</tr>
-					<tr>
-						<td></td>
+						<td>登入</td>
+						<td>註冊</td>
 					</tr>
 				</table>
+				<form action="http://httpbin.org/post" method="post">
+					<table id="table_login" border="1px">
+						<tr>
+							<td><input type="text" placeholder="用戶名："></td>
+						</tr>
+						<tr>
+							<td><input type="text" placeholder="E-mail："></td>
+						</tr>
+						<tr>
+							<td><input type="text" placeholder="密碼："></td>
+						</tr>
+
+					</table>
+				</form>
 			</div>
 		</div>
 		<div id="footer">

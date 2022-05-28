@@ -115,3 +115,5 @@ $('.menu_sort li').each(function(index){
 		$('#mask_sort').remove();
 	});
 });
+
+//member頁面切換
