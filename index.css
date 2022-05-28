@@ -4,6 +4,7 @@ body{
 	font-family: "cwTeXYen", sans-serif;
 	color: #3d3d3d;
 	background-color: #ffeaab;
+	width: 100%;
 	/*主色調#ffcf4a*/
 }
 #sidebody{
@@ -150,6 +151,7 @@ body{
     display: inline-block;
 }
 .menu_star li{
+	margin: 0 auto;
 	list-style: none; 
     float: left;
     padding: 0;
@@ -176,10 +178,12 @@ body{
 }
 .star ul{
 	margin: 0 auto;
+	position: relative;
 }
 
 li img{
 	height: 250px;
+	width: 250px;
 	margin: 0 auto;
 	padding: 0;
 }
@@ -198,7 +202,7 @@ li #mask_star:hover{
 	display: none;
 }
 /*熱門商品*/
-#sort{
+.sort{
 	width: 80%;
 	margin: 0 auto;
 	margin-top: 30px;
