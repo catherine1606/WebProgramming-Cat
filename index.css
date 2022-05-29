@@ -22,11 +22,12 @@ body{
 	box-shadow: 1px 1px 2px #636363;
 	position: relative;
 	z-index: 3px;
+	width: 100%;
 }
 /*頁面上方選單*/
 .h_option{
+	width: 100%;
 	text-align: center;
-	
 }
 .menu_option li{
 	display: inline;
@@ -72,10 +73,9 @@ body{
 
 #member{
 	height: 25px;
-	position: absolute;
+	position: relative;
 	float: right;
 	margin: 35px;
-	left: 1350px;
 	color: #ccc;
 }
 
@@ -545,9 +545,16 @@ span{
 #button_lr{
 	width: 350px;
 	height: 30px;
-	border: 0px solid #fff;
+	border: 1px solid #ffbf00;
 	border-radius: 5px;
-	background-color: #ffbf00;
+	background-color: #ffdb6e;
 	color: #ffffff;
 	font-size: 15px ;
+}
+#button_lr:hover{
+	cursor: pointer;
+	background-color: #ffbf00;
+}
+#forget:hover{
+	cursor: pointer;
 }

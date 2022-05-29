@@ -44,6 +44,17 @@ function detect(){
 			}
 		});
 	}
+	if($('title').text() == "小遊戲")
+	{
+		$('li').each(function(index)
+		{
+			if($(this).text() == "小遊戲")
+			{
+				$(this).css('background','#ffbf00');
+				$(this).css('color','#ffffff');
+			}
+		});
+	}
 }
 //選單按鈕的陰影動畫。參考網站：https://bitstorm.org/jquery/shadow-animation/
 $('.menu_option li').each(function(index){
