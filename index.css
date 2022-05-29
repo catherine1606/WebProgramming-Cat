@@ -18,11 +18,17 @@ body{
 	background-color: #ffffff;
 	text-align: center;	
 	font-size: 12pt;
-	height: 100px;
-	box-shadow: 1px 1px 2px #636363;
-	position: relative;
-	z-index: 3px;
+	height: 110px;
 	width: 100%;
+	box-shadow: 1px 1px 2px #636363;
+	z-index: 999;
+	position: fixed;
+	margin-top: -150px;
+}
+#content{
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 150px;
 }
 /*頁面上方選單*/
 .h_option{
@@ -65,6 +71,8 @@ body{
 	float: left;
 	margin: 20px;
 	left: 10px;
+	filter: invert(21%) sepia(18%) saturate(11%) hue-rotate(65deg) brightness(99%) contrast(90%);
+	/*改變icon顏色*/
 }
 
 #icon:hover{
@@ -73,21 +81,30 @@ body{
 
 #member{
 	height: 25px;
-	position: relative;
+	position: absolute;
 	float: right;
-	margin: 35px;
-	color: #ccc;
+	margin-top: 35px;
+	right: 30px;
 }
 
 #member:hover{
 	cursor: pointer;
 }
-
-#content{
-	margin: 0 auto;
-	text-align: center;
+#cat_walk{
+	width: 100px;
+	position: fixed;
+	left: -70px;
+	top: 65px;
+	animation: cat_running 10s linear infinite;
 }
-
+@keyframes cat_running{
+	from{
+		left: -70;
+	}
+	to{
+		left: 1450px;
+	}
+}
 #photo{
 	background-color: #ffffff;
 	height: 530px;
@@ -148,8 +165,7 @@ body{
 }
 .menu_star li{
 	margin: 0 auto;
-	list-style: none; 
-    float: left;
+	
     padding: 0;
     display: inline-block;
 	width: 250px;
@@ -466,7 +482,6 @@ span{
 .register{
 	width: 450px;
 	margin: 0 auto;
-	margin-top: 70px;
 	
 	border-radius: 10px;
 	background-color: #ffffff;
@@ -476,7 +491,7 @@ span{
 .login{
 	width: 450px;
 	margin: 0 auto;
-	margin-top: 70px;
+	
 	margin-bottom: 134px;
 	border-radius: 10px;
 	background-color: #ffffff;
