@@ -23,7 +23,7 @@ body{
 	position: relative;
 	z-index: 3px;
 }
-
+/*頁面上方選單*/
 .h_option{
 	text-align: center;
 	
@@ -87,10 +87,6 @@ body{
 	margin: 0 auto;
 	text-align: center;
 }
-
-/* #title{
-	font-size: 35px;
-} */
 
 #photo{
 	background-color: #ffffff;
@@ -467,18 +463,91 @@ span{
 }
 
 /*member*/
-.login{
-	width: 300px;
-	height: 300px;
+.register{
+	width: 450px;
 	margin: 0 auto;
-	margin-top: 50px;
+	margin-top: 70px;
+	
 	border-radius: 10px;
 	background-color: #ffffff;
+	border: 1px solid #ccc;
+	display: none;
 }
-#table_login{
+.login{
+	width: 450px;
 	margin: 0 auto;
-	margin-top: 100px;
+	margin-top: 70px;
+	margin-bottom: 134px;
+	border-radius: 10px;
+	background-color: #ffffff;
+	border: 1px solid #ccc;
+	display: block;
+}
+/*#login_hr{
+	width: 250px;
+	color: 1px #ccc;
+	margin: 0 auto;
+}*/
+#table_lr{
+	display: inline-block;
+	margin: 0 auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+#table_lr td{
+	height: 50px;
+}
+#text_lr{
+	width: 330px;
+	padding: 10px;
+	font-size: 15px;
+	border: 1px solid #ccc;
 }
 #table_title{
 	margin: 0 auto;
+	font-size: 25px;
+	border-collapse: collapse;
+}
+#table_title_login_l{
+	height: 50px;
+	width: 230px;
+	background-color: #ffffff;
+	border-top-left-radius: 8px;
+
+}
+#table_title_register_l{
+	height: 50px;
+	width: 230px;
+	background-color: #f0f0f0;
+	border-top-right-radius: 8px;
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+#table_title_login_r{
+	height: 50px;
+	width: 230px;
+	background-color: #f0f0f0;
+	border-top-left-radius: 8px;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+#table_title_register_r{
+	height: 50px;
+	width: 230px;
+	background-color: #ffffff;
+	border-top-right-radius: 8px;
+}
+
+#checkbox_lr{
+	align-content: left;
+	height: 50px;
+}
+#button_lr{
+	width: 350px;
+	height: 30px;
+	border: 0px solid #fff;
+	border-radius: 5px;
+	background-color: #ffbf00;
+	color: #ffffff;
+	font-size: 15px ;
 }

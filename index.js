@@ -1,4 +1,4 @@
-//這個function的功能是會自動偵測現在頁面，並讓header的標籤呈現灰底。
+//這個function的功能是會自動偵測現在頁面，並讓header的標籤呈現黃底。
 function detect(){
 	if($('title').text() == "首頁")
 	{
@@ -117,3 +117,28 @@ $('.menu_sort li').each(function(index){
 });
 
 //member頁面切換
+function register(){
+	$('.register').css('display','block');
+	$('.login').css('display','none');
+}
+function login(){
+	$('.login').css('display','block');
+	$('.register').css('display','none');
+}
+//經過會改變css樣式&cursor->pointer
+$('#table_title_register_l').mouseenter(function(){
+	$(this).css('cursor','pointer');
+	$(this).css('background-color','#ddd');
+});
+$('#table_title_register_l').mouseleave(function(){
+	$(this).css('cursor','auto');
+	$(this).css('background-color','#f0f0f0');
+});
+$('#table_title_login_r').mouseenter(function(){
+	$(this).css('cursor','pointer');
+	$(this).css('background-color','#ddd');
+});
+$('#table_title_login_r').mouseleave(function(){
+	$(this).css('cursor','auto');
+	$(this).css('background-color','#f0f0f0');
+});

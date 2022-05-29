@@ -24,24 +24,58 @@
 		</div>
 		<div id="content">
 			<div class="login">
-				<table border="1" id="table_title">
+				<table id="table_title">
 					<tr>
-						<td>登入</td>
-						<td>註冊</td>
+						<td id="table_title_login_l">登入</td>
+						<td id="table_title_register_l" onclick="register()">註冊</td>
 					</tr>
 				</table>
+				<!--<hr id="login_hr">-->
 				<form action="http://httpbin.org/post" method="post">
-					<table id="table_login" border="1px">
+					<table id="table_lr">
+						<caption>登入E-mail</caption>
 						<tr>
-							<td><input type="text" placeholder="用戶名："></td>
+							<td><input name="email" type="text" id="text_lr" placeholder="E-mail："></td>
 						</tr>
 						<tr>
-							<td><input type="text" placeholder="E-mail："></td>
+							<td><input name="password" type="password" id="text_lr" placeholder="密碼："></td>
 						</tr>
 						<tr>
-							<td><input type="text" placeholder="密碼："></td>
+							<td><button id="button_lr">開始！</button></td>
 						</tr>
+						<tr>
+							<td><a>忘記密碼</a></td>
+						</tr>
+					</table>
+				</form>
+			</div>
 
+			<div class="register">
+				<table id="table_title">
+					<tr>
+						<td id="table_title_login_r" onclick="login()">登入</td>
+						<td id="table_title_register_r">註冊</td>
+					</tr>
+				</table>
+				<!--<hr id="login_hr">-->
+				<form action="http://httpbin.org/post" method="post">
+					<table id="table_lr">
+						<caption>註冊E-mail</caption>
+						<tr>
+							<td><input name="username" type="text" id="text_lr" placeholder="用戶名："></td>
+						</tr>
+						<tr>
+							<td><input name="email" type="text" id="text_lr" placeholder="E-mail："></td>
+						</tr>
+						<tr>
+							<td><input name="password" type="password" id="text_lr" placeholder="密碼："></td>
+						</tr>
+						<tr>
+							<td id="checkbox_lr"><input type="checkbox">訂閱電子郵件及簡訊，獲得更多資訊。</td>
+						</tr>
+						<tr>
+							<td><button id="button_lr">立即加入！</button></td>
+						</tr>
 					</table>
 				</form>
 			</div>
