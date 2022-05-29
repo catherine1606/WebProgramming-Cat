@@ -113,6 +113,9 @@ body{
 	margin-top: 30px;
 	border-radius: 10px;
 }
+#abous_us{
+	
+}
 #thumbs{
 	width: 100px;
 	margin: 0 auto;
@@ -165,7 +168,6 @@ body{
 }
 .menu_star li{
 	margin: 0 auto;
-	
     padding: 0;
     display: inline-block;
 	width: 250px;
@@ -202,7 +204,10 @@ li img{
 li #mask_star:hover{
 	cursor: pointer;
 }
-
+#link_star{
+	color: rgba(5,5,5,1);
+	text-decoration: none;
+}
 #mask_star{
 	font-weight: bold;
 	width: 250px;
@@ -275,7 +280,10 @@ li img{
 li #mask_sort:hover{
 	cursor: pointer;
 }
-
+#link_sort{
+	color: rgba(5,5,5,1);
+	text-decoration: none;
+}
 #mask_sort{
 	font-weight: bold;
 	width: 250px;
@@ -283,7 +291,6 @@ li #mask_sort:hover{
 	border-radius: 10px;
 	position: absolute;
 	background-color: rgba(255, 255, 255, 0.7);
-	color: rgba(5,5,5,1);
 	display: none;
 }
 /*遊戲部分*/
@@ -469,15 +476,30 @@ li #mask_sort:hover{
 	margin-right:auto;
 	text-align: left;
 }
-
+#innerForm input{
+	height: 20px;
+	width: 250px;
+}
 span{
 	color: red;
 }
 
-#button{
+#button_adopt{
 	text-align: center;
 }
-
+#button_adopt button{
+	height: 35px;
+	width: 150px;
+	font-size: 18px;
+	border: 1px solid #ff5454;
+	border-radius: 5px;
+	background-color: #ff7070;
+	color: #ffffff;
+}
+#button_adopt button:hover{
+	cursor: pointer;
+	background-color: #ff5454;
+}
 /*member*/
 .register{
 	width: 450px;
@@ -511,6 +533,10 @@ span{
 }
 #table_lr td{
 	height: 50px;
+}
+#table_lr caption{
+	font-size: 25px;
+	font-weight: bold;
 }
 #text_lr{
 	width: 330px;

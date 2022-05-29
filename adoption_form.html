@@ -56,28 +56,28 @@
             </table>
             <h1 id="formTitle">填寫表單</h1>
             <div id="hint">如欲領養請填寫表單提供基本資料、簡述概況和希望領養什麼樣的貓咪，我們將與您聯繫</div>
-            <form id="adoptionForm" action="http://httpbin.org/post" method="post">
+            <form id="adoptionForm" onsubmit="return adoptionData()">
                 <table id="innerForm">
                     <tr>
-                        <td><span>*</span>姓名： </td>
-                        <td><input name="name" type="text" required></td>
+                        <td><label for="name"><span>*</span>姓名： </label></td>
+                        <td><input id="name" name="name" type="text" placeholder="輸入姓名" required></td>
                     </tr>
                     <tr>
-                        <td><span>*</span>Email：</td>
-                        <td><input name="email" type="email" required></td>
+                        <td><label for="email"><span>*</span>Email：</label></td>
+                        <td><input id="email" name="email" type="email" placeholder="example@mail.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"></td>
                     </tr>
                     <tr>
-                        <td><span>*</span>電話：</td>
-                        <td><input name="phone" type="tel" required></td>
+                        <td><label for="phone"><span>*</span>電話：</label></td>
+                        <td><input id="phone" name="phone" type="tel" placeholder="0909-123-123" required pattern="\d{4}[\-]\d{3}[\-]\d{3}"></td>
                     </tr>
                     <tr>
-                        <td><span>*</span>簡述：</td>
-                        <td><textarea name="word" rows="5" cols="50" required></textarea></td>
+                        <td><label for="textarea"><span>*</span>簡述：</label></td>
+                        <td><textarea  id="textarea" name="word" rows="5" cols="50" placeholder="簡述概況和希望領養什麼貓咪" required></textarea></td>
                     </tr>
                     <tr>
-                        <td id="button" colspan="2">
-                            <input name="submit" type="submit" value="確定送出">
-                            <input name="reset" type="reset" value="清除重填">
+                        <td id="button_adopt" colspan="2">
+                            <button name="submit" type="submit">確定送出</button>
+                            <button name="reset" type="reset">清除重填</button>
                         </td>
                     </tr>
                 </table>

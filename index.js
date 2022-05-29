@@ -22,6 +22,17 @@ function detect(){
 			}
 		});
 	}
+	if($('title').text() == "領養表單")
+	{
+		$('li').each(function(index)
+		{
+			if($(this).text() == "領養")
+			{
+				$(this).css('background','#ffbf00');
+				$(this).css('color','#ffffff');
+			}
+		});
+	}
 	if($('title').text() == "購物")
 	{
 		$('li').each(function(index)
@@ -45,6 +56,58 @@ function detect(){
 		});
 	}
 }
+//領養表單的值
+function adoptionData(){
+	var formElement = document.getElementById('adoptionForm');
+	var name = formElement[0].value;
+	var email = formElement[1].value;
+	var phone = formElement[2].value;
+	var word = formElement[3].value;
+	if(name == "" | email == "" | phone == "" | word == ""){
+		alert('欄位不得為空！');
+		return false;
+	}
+	else{
+		alert("你輸入的資料：\n名字： "+name+"\nEmail： "+email+"\n電話： "+phone+"\n簡述： "+word);	
+		return true;
+	}
+}
+//會員表單的值
+//登入表單
+function loginData(){
+	var formElement = document.getElementById('loginForm');
+	var email = formElement[0].value;
+	var password = formElement[1].value;
+	if(email == "" | password == ""){
+		alert('欄位不得為空！');
+		return false;
+	}
+	else{
+		alert("你的登入資料：\nEmail： "+email+"\n密碼： "+password);	
+		return true;
+	}
+}
+//註冊表單
+function registerData(){
+	var formElement = document.getElementById('registerForm');
+	var name = formElement[0].value;
+	var email = formElement[1].value;
+	var password = formElement[2].value;
+	var checkbox = formElement[3].checked;
+	if(name == "" | email == "" | password == ""){
+		alert('欄位不得為空！');
+		return false;
+	}
+	else{
+		alert("你的註冊資料：\n名字："+name+"\nEmail："+email+"\n密碼："+password+"\n是否訂閱："+checkbox);	
+		return true;
+	}
+}
+//忘記密碼
+function forget(){
+	alert('我也不知道你的密碼 :>')
+}
+
 //選單按鈕的陰影動畫。參考網站：https://bitstorm.org/jquery/shadow-animation/
 $('.menu_option li').each(function(index){
 	$(this).mouseenter(function(){
@@ -97,9 +160,14 @@ $(function(){
 $('.menu_star li').each(function(index){
 	$(this).mouseenter(function(){
 		var text_star = ["貓砂","貓跳台","貓零食","貓砂盆"];
+		var shopping_star = ["https://shopee.tw/search?keyword=貓砂",
+		"https://shopee.tw/search?keyword=貓跳台",
+		"https://shopee.tw/search?keyword=貓零食",
+		"https://shopee.tw/search?keyword=貓砂盆"];
 		$(this).prepend('<div id="mask_star">'+ text_star[index] +'</div>');
+		$(this).wrap('<a id="link_star" href="'+shopping_star[index]+'" target="_blank"></a>');
 		$(this).children('#mask_star').fadeIn('5000');
-		//$('#mask_star').fadeIn('');
+		
 	});
 	$(this).mouseleave(function(){
 		$('#mask_star').remove();
@@ -109,7 +177,12 @@ $('.menu_star li').each(function(index){
 $('.menu_sort li').each(function(index){
 	$(this).mouseenter(function(){
 		var text_sort = ["貓食品","貓玩具","貓日常用品","貓咪療癒小物"];
+		var shopping_sort = ["https://shopee.tw/search?keyword=貓食品",
+		"https://shopee.tw/search?keyword=貓玩具",
+		"https://shopee.tw/search?keyword=貓日常用品",
+		"https://shopee.tw/search?keyword=貓咪療癒小物"];
 		$(this).prepend('<div id="mask_sort">'+ text_sort[index] +'</div>');
+		$(this).wrap('<a id="link_sort" href="'+shopping_sort[index]+'" target="_blank"></a>');
 		$(this).children('#mask_sort').fadeIn('5000');
 		//$('#mask_star').fadeIn('');
 	});

@@ -32,20 +32,20 @@
 					</tr>
 				</table>
 				<!--<hr id="login_hr">-->
-				<form action="http://httpbin.org/post" method="post">
+				<form id="loginForm" onsubmit="loginData()">
 					<table id="table_lr">
 						<caption>登入E-mail</caption>
 						<tr>
-							<td><input name="email" type="text" id="text_lr" placeholder="E-mail："></td>
+							<td><input name="email" type="email" id="text_lr" placeholder="*E-mail：" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"></td>
 						</tr>
 						<tr>
-							<td><input name="password" type="password" id="text_lr" placeholder="密碼："></td>
+							<td><input name="password" type="password" id="text_lr" placeholder="*密碼：" required pattern="[0-9a-zA-z]{6,}"></td>
 						</tr>
 						<tr>
-							<td><button id="button_lr">開始！</button></td>
+							<td><button id="button_lr" type="submit">開始！</button></td>
 						</tr>
 						<tr>
-							<td id="forget"><a>忘記密碼</a></td>
+							<td id="forget"><a onclick="forget()">忘記密碼</a></td>
 						</tr>
 					</table>
 				</form>
@@ -59,23 +59,23 @@
 					</tr>
 				</table>
 				<!--<hr id="login_hr">-->
-				<form action="http://httpbin.org/post" method="post">
+				<form id="registerForm" onsubmit="registerData()">
 					<table id="table_lr">
 						<caption>註冊E-mail</caption>
 						<tr>
-							<td><input name="username" type="text" id="text_lr" placeholder="用戶名："></td>
+							<td><input name="username" type="text" id="text_lr" placeholder="*用戶名：" required></td>
 						</tr>
 						<tr>
-							<td><input name="email" type="text" id="text_lr" placeholder="E-mail："></td>
+							<td><input name="email" type="email" id="text_lr" placeholder="*E-mail：" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"></td>
 						</tr>
 						<tr>
-							<td><input name="password" type="password" id="text_lr" placeholder="密碼："></td>
+							<td><input name="password" type="password" id="text_lr" placeholder="*密碼：英數混合至少6碼" required pattern="[0-9a-zA-z]{6,}"></td>
 						</tr>
 						<tr>
 							<td id="checkbox_lr"><input type="checkbox">訂閱電子郵件及簡訊，獲得更多資訊。</td>
 						</tr>
 						<tr>
-							<td><button id="button_lr">立即加入！</button></td>
+							<td><button id="button_lr" type="submit">立即加入！</button></td>
 						</tr>
 					</table>
 				</form>
